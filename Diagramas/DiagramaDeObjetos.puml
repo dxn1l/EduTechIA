@@ -1,0 +1,35 @@
+@startuml
+
+object usuario1 {
+  nombre = "Juan Perez"
+  email = "juan@example.com"
+}
+
+object usuario2 {
+  nombre = "Maria Lopez"
+  email = "maria@example.com"
+}
+
+object admin1 {
+  nombre = "Admin User"
+  email = "admin@example.com"
+}
+
+object contenido1 {
+  titulo = "Curso de Python"
+  descripcion = "Aprende Python desde cero"
+  tipo = "Video"
+}
+
+object contenido2 {
+  titulo = "Machine Learning"
+  descripcion = "Introducción al aprendizaje automático"
+  tipo = "Artículo"
+}
+
+usuario1 -- contenido1
+usuario2 -- contenido2
+admin1 -- usuario1
+admin1 -- usuario2
+
+@enduml

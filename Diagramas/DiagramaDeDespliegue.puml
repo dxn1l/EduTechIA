@@ -1,0 +1,29 @@
+@startuml
+
+node "Usuario" as User
+node "Servidor Web" as WebServer
+node "Servidor de Aplicaciones" as AppServer
+node "Base de Datos" as DB
+
+User --> WebServer : Accede a la plataforma
+WebServer --> AppServer : Solicitud de autenticación
+AppServer --> DB : Verificar credenciales
+DB --> AppServer : Respuesta de autenticación
+AppServer --> WebServer : Confirmación de inicio de sesión
+WebServer --> User : Acceso concedido
+
+User --> WebServer : Solicitar contenido
+WebServer --> AppServer : Obtener recomendaciones
+AppServer --> DB : Consultar historial
+DB --> AppServer : Enviar historial
+AppServer --> WebServer : Enviar contenido recomendado
+WebServer --> User : Mostrar contenido
+
+User --> WebServer : Guardar progreso
+WebServer --> AppServer : Registrar actividad
+AppServer --> DB : Guardar datos
+DB --> AppServer : Confirmación de guardado
+AppServer --> WebServer : Confirmación
+WebServer --> User : Progreso guardado
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+
+class Usuario {
+  +nombre: String
+  +email: String
+  +iniciarSesion()
+  +verContenido()
+  +completarActividad()
+}
+
+class Administrador {
+  +nombre: String
+  +email: String
+  +gestionarUsuarios()
+  +configurarPlataforma()
+}
+
+class PlataformaEduTechIA {
+  +usuarios: List<Usuario>
+  +contenido: List<Contenido>
+  +verificarCredenciales()
+  +recomendarContenido()
+}
+
+class Contenido {
+  +titulo: String
+  +descripcion: String
+  +tipo: String
+}
+
+Usuario -- PlataformaEduTechIA
+Administrador -- PlataformaEduTechIA
+PlataformaEduTechIA -- Contenido
+
+@enduml

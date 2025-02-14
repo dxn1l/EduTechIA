@@ -1,0 +1,20 @@
+@startuml
+
+actor Usuario
+actor Administrador
+
+rectangle "Plataforma EduTech IA" {
+  usecase "Iniciar sesión" as UC1
+  usecase "Ver contenido recomendado" as UC2
+  usecase "Completar actividad" as UC3
+  usecase "Gestionar usuarios" as UC4
+  usecase "Configurar plataforma" as UC5
+}
+
+Usuario -> UC1
+Usuario -> UC2
+Usuario -> UC3
+Administrador -> UC4
+Administrador -> UC5
+
+@enduml

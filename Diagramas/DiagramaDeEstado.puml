@@ -1,0 +1,17 @@
+@startuml
+
+state "Inicio de sesión" as Login
+state "Ver contenido" as ViewContent
+state "Realizar actividad" as DoActivity
+state "Guardar progreso" as SaveProgress
+state "Cerrar sesión" as Logout
+
+[*] --> Login
+Login --> ViewContent : Autenticación exitosa
+ViewContent --> DoActivity : Usuario selecciona actividad
+DoActivity --> SaveProgress : Usuario completa actividad
+SaveProgress --> ViewContent : Progreso guardado
+ViewContent --> Logout : Usuario decide salir
+Logout --> [*]
+
+@enduml

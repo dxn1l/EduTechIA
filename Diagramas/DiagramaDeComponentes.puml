@@ -1,0 +1,21 @@
+@startuml
+
+component "Interfaz de Usuario" as UI
+component "Gestor de Autenticación" as Auth
+component "Módulo de Recomendación" as Recommender
+component "Base de Datos" as DB
+
+UI --> Auth : Solicitar inicio de sesión
+Auth --> DB : Verificar credenciales
+DB --> Auth : Respuesta de autenticación
+Auth --> UI : Confirmación de inicio de sesión
+
+UI --> Recommender : Solicitar contenido recomendado
+Recommender --> DB : Obtener historial de usuario
+DB --> Recommender : Enviar historial
+Recommender --> UI : Enviar contenido recomendado
+
+UI --> DB : Guardar progreso de actividad
+DB --> UI : Confirmación de guardado
+
+@enduml

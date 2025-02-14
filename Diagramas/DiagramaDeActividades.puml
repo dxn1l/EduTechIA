@@ -1,0 +1,24 @@
+@startuml
+
+start
+
+:Usuario inicia sesión;
+if (Credenciales válidas?) then (Sí)
+  :Mostrar pantalla principal;
+  :Cargar contenido recomendado;
+else (No)
+  :Mostrar mensaje de error;
+  stop
+endif
+
+:Seleccionar contenido;
+:Ver contenido;
+if (Completar actividad?) then (Sí)
+  :Registrar progreso;
+  :Actualizar recomendación de contenido;
+endif
+
+:Usuario cierra sesión;
+stop
+
+@enduml
